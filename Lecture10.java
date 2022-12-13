@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Lecture10 {
     public static void main(String[] args) {
         int[] newArray = createArray();
-        System.out.println(findDuplicates(newArray));
+        System.out.println(removeElement(newArray, 5));
     }
      // Create an Array
      public static int[] createArray() {
@@ -105,4 +105,29 @@ public class Lecture10 {
         }
         return newArrayList;
 	}
+
+    //27. Remove Element
+    public static int removeElement(int[] nums, int val) {
+        int i = 0;
+        int j = 0;
+
+        while(i < nums.length && nums[i] != val )
+        {
+            i++;
+            j++;
+        }
+        while(j < nums.length && i < nums.length)
+        {
+            if(nums[j] == val){
+                j++;
+            }
+            else{
+                nums[i] = nums[j];
+                i++;
+                j++;
+            }
+        }
+        return i;
+
+    }
 }
