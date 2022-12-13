@@ -10,10 +10,8 @@ public class Lecture_7 {
         System.out.println(isPowerOfTwo(x));
 
         sc.close();
-       
 
     }
-
 
     // 7. Reverse Integer -- leetcode
     public static int reverseInteger(int x) {
@@ -22,7 +20,7 @@ public class Lecture_7 {
         while (x != 0) {
             if (answer < Integer.MIN_VALUE / 10 && answer > Integer.MAX_VALUE) {
                 return 0;
-                   
+
             }
             answer = (10 * answer) + (x % 10);
             x = x / 10;
@@ -30,44 +28,42 @@ public class Lecture_7 {
         return answer;
     }
 
-    //1009. Complement of Base 10 Integer
+    // 1009. Complement of Base 10 Integer
 
     public static int bitwiseComplement(int n) {
 
-         //edge case
-         if(n == 0){
+        // edge case
+        if (n == 0) {
             return 1;
         }
 
         int m = n;
         int mask = 0;
-        while(m != 0)
-        {
-           mask = (mask << 1) | 1;
-           m = m >> 1;
+        while (m != 0) {
+            mask = (mask << 1) | 1;
+            m = m >> 1;
         }
 
-        return ((~n) & mask );   
+        return ((~n) & mask);
     }
 
     // 231. Power of Two
     public static boolean isPowerOfTwo(int n) {
-    int count = 0;
-    int temp = 0;
-    if(n < 0 ){
-        return false;
-    }
-    while(n != 0)    
-    {
-        if((n & 1) == 1){
-            count++;
-        }
-        if(count > 1){
+        int count = 0;
+        int temp = 0;
+        if (n < 0) {
             return false;
         }
-        n = n >> 1;
-    }
-    return true;
+        while (n != 0) {
+            if ((n & 1) == 1) {
+                count++;
+            }
+            if (count > 1) {
+                return false;
+            }
+            n = n >> 1;
+        }
+        return true;
     }
 
 }
