@@ -20,10 +20,6 @@ public class Leetcode_1207{
             arrayList.add(j-i);
             i = j;
         }
-        for(int k = 0; k<arrayList.size(); k++)
-        {
-            System.out.print( " " + arrayList.get(k));
-        }
         i = 0;
         j = 1;
         Collections.sort(arrayList);
