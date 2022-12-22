@@ -7,21 +7,21 @@ public class Lecture_16 {
     //selection sort
     public static int[] selectionSort(int[] arr)
     {
-        for(int i = 0; i < arr.length - 1; i++)
+        for(int i=0; i< arr.length - 1; i++)
         {
-            int minimumIndex = i;
+            int smallIndex = i;
             for(int j = i + 1; j < arr.length; j++)
             {
-                if(arr[j] < arr[minimumIndex])
+                if(arr[smallIndex] > arr[j])
                 {
-                    minimumIndex = j;
+                    smallIndex = j;
                 }
             }
-            int temp = arr[minimumIndex];
-            arr[minimumIndex] = arr[i];
+            int temp = arr[smallIndex];
+            arr[smallIndex] = arr[i];
             arr[i] = temp;
-            
         }
+
         return arr;
     }
 }
