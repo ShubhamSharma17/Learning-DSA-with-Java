@@ -1,7 +1,5 @@
 public class Lecture_20 {
     public static void main(String[] args) {
-        int[] array1 = arrays.createArray();
-        int[] array2 = arrays.createArray();
     }
 
     //88. Merge Sorted Array
@@ -25,6 +23,23 @@ public class Lecture_20 {
          while(j >= 0){
                 nums1[lastIndex--] = nums2[j--];
          }
+    }
+
+    //283. Move Zeroes
+    public void moveZeroes(int[] nums) {
+        int number = 0;
+        int i = 0;
+        while(i < nums.length){
+
+            if(nums[i] != 0){
+                //swap the number and zero
+                int temp = nums[i];
+                nums[i] = nums[number];
+                nums[number] = temp;
+                number++;
+            }
+            i++;
+        }
     }
     
 }
