@@ -12,7 +12,7 @@ public class arrays {
         for (int i = 0; i < array.length; i++) {
             array[i] = sc.nextInt();
         }
-        sc.close();
+        // sc.close();
         return array;
 
     }
