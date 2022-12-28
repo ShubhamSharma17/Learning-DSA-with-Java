@@ -22,7 +22,7 @@ public class LectureZ_22 {
         // System.out.println("Reverse String is " + finalString);
 
 
-        String s = "N2 i&nJA?a& jnI2n";
+        String s = "N2 i&nJA?a& jqI2n";
         System.out.println(checkPalindrome(s));
     }
 
@@ -43,27 +43,32 @@ public class LectureZ_22 {
 
     // Check If The String Is A Palindrome
     public static boolean checkPalindrome(String str) {
-       str = str.toLowerCase();
-        int s = 0;
-        int e = str.length() - 1;
-        while(s < e)
-        {
-            if( (str.charAt(s) >= 'a' && str.charAt(s) <= 'z') || (str.charAt(s) >= 'A' && str.charAt(s) <= 'Z') ){
-                if( (str.charAt(e) >= 'a' && str.charAt(e) <= 'z') || (str.charAt(e) >= 'A' && str.charAt(e) <= 'Z')  ){
-                    if(str.charAt(s) != str.charAt(e)){
+        str = str.toLowerCase();
+        int startIndex = 0;
+        int endIndex = str.length() - 1;
+        // boolean status = true;
+        while (startIndex < endIndex) {
+            if ((str.charAt(startIndex) >= 'a' && str.charAt(startIndex) <= 'z') || (str.charAt(startIndex) >= '0'
+                    && str.charAt(startIndex) <= '9')) {
+                if ((str.charAt(endIndex) >= 'a' && str.charAt(endIndex) <= 'z') || (str.charAt(endIndex) >= '0'
+                        && str.charAt(endIndex) <= '9')) {
+                    if (str.charAt(startIndex) != str.charAt(endIndex)) {
                         return false;
+                    } else {
+                        startIndex++;
+                        endIndex--;
+                        // status = false;
                     }
-                    s++;e--;
+                } else {
+                    endIndex--;
+                    // status = false;
                 }
-                else{
-                    e--;
-                }
-            }
-            else{
-                s++;
+            } else {
+                startIndex++;
+                // status = false;
             }
         }
         return true;
-	}
+    }
     
 }
