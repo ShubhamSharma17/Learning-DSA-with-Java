@@ -22,8 +22,11 @@ public class LectureZ_22 {
         // System.out.println("Reverse String is " + finalString);
 
 
-        String s = "N2 i&nJA?a& jqI2n";
-        System.out.println(checkPalindrome(s));
+        // String s = "N2 i&nJA?a& jqI2n";
+        // System.out.println(checkPalindrome(s));
+
+
+        System.out.println(getMaxOccuringChar("output"));
     }
 
 
@@ -69,6 +72,31 @@ public class LectureZ_22 {
             }
         }
         return true;
+    }
+    // Maximum Occuring Character
+    public static char getMaxOccuringChar(String line)
+    {
+        int []arr = new int[26];
+        int number = 0;
+        for(int i = 0; i < line.length(); i++)
+        {
+            char ch = line.charAt(i);
+            System.out.print(" "+(int)(ch - 'a'));
+            number =  ch - 'a';
+            arr[number] += 1;
+        }
+        System.out.println();
+        int max = -1;
+        int ans = 0;
+        for(int j = 0; j < 26; j++)
+        {
+            // System.out.print(" " + arr[j]);
+            if(max < arr[j]){
+                ans = j;
+                max = arr[j];
+            }
+        }
+        return (char)('a' + ans );
     }
     
 }
