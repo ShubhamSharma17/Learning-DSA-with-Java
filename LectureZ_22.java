@@ -1,3 +1,4 @@
+import java.nio.file.FileAlreadyExistsException;
 import java.util.Scanner;
 
 public class LectureZ_22 {
@@ -26,7 +27,10 @@ public class LectureZ_22 {
         // System.out.println(checkPalindrome(s));
 
 
-        System.out.println(getMaxOccuringChar("output"));
+        // System.out.println(getMaxOccuringChar("output"));
+        StringBuilder str = new StringBuilder();
+        str.append("Hello World");
+        System.out.println(replaceSpaces(str));
     }
 
 
@@ -99,4 +103,20 @@ public class LectureZ_22 {
         return (char)('a' + ans );
     }
     
+
+    // Replace Spaces
+    public static StringBuilder replaceSpaces(StringBuilder str) {
+        StringBuilder finalString = new StringBuilder();
+        for(int i = 0; i < str.length(); i++)
+        {
+            if(str.charAt(i) == ' ')
+            {
+                finalString.append("@40");
+            }
+            else{
+                finalString.append(str.charAt(i));
+            }
+        }
+        return finalString;
+	}
 }
