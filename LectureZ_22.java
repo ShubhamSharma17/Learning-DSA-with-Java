@@ -30,7 +30,9 @@ public class LectureZ_22 {
 
         // System.out.println(removeOccurrences("daabcbaabcbc", "abc"));
 
-        System.out.println(checkInclusion("ab", "eidboaoo"));
+        // System.out.println(checkInclusion("ab", "eidboaoo"));
+
+        System.out.println(removeDuplicates("abbca"));
 
     }
 
@@ -157,20 +159,49 @@ public class LectureZ_22 {
                 tempArray[number] += 1;
             }
             int k = 0;
-                check = true;
-                while (k < 26) {
-                    if (s1Array[k] != tempArray[k]) {
-                        check = false;
-                    }
-                    k++;
+            check = true;
+            while (k < 26) {
+                if (s1Array[k] != tempArray[k]) {
+                    check = false;
                 }
-                if(check)
-                {
-                    return check;
-                }
+                k++;
+            }
+            if (check) {
+                return check;
+            }
             i++;
         }
         return check;
+    }
+
+    // 1047. Remove All Adjacent Duplicates In String
+    public static String removeDuplicates(String s) {
+        String temp1 = "";
+        String temp2 = "";
+        int i = 0;
+        int j = i + 1;
+        ;
+        int length = s.length();
+        while (j < length) {
+            if (s.charAt(i) == s.charAt(j)) {
+                temp1 = s.substring(0, i);
+                if (j < length - 1) {
+                    temp2 = s.substring(j + 1, length);
+                } else {
+                    temp2 = "";
+                }
+                i = i - 1;
+                j = i + 1;
+            s = temp1 + temp2;
+            length = s.length();
+                
+            } else {
+                i++;
+                j++;
+            }
+
+        }
+        return s;
     }
 
 }
