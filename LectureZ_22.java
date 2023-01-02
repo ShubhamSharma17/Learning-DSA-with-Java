@@ -155,8 +155,8 @@ public class LectureZ_22 {
                 char ch = s2.charAt(j);
                 int number = ch - 'a';
                 tempArray[number] += 1;
-
-                int k = 0;
+            }
+            int k = 0;
                 check = true;
                 while (k < 26) {
                     if (s1Array[k] != tempArray[k]) {
@@ -168,9 +168,6 @@ public class LectureZ_22 {
                 {
                     return check;
                 }
-            }
-            // arrays.printArray(tempArray);
-
             i++;
         }
         return check;
