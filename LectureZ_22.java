@@ -28,7 +28,9 @@ public class LectureZ_22 {
         // str.append("Hello World");
         // System.out.println(replaceSpaces(str));
 
-        System.out.println(removeOccurrences("daabcbaabcbc", "abc"));
+        // System.out.println(removeOccurrences("daabcbaabcbc", "abc"));
+
+        System.out.println(checkInclusion("ab", "eidboaoo"));
 
     }
 
@@ -134,4 +136,41 @@ public class LectureZ_22 {
         return s;
 
     }
+
+    // 567. Permutation in String
+    public static boolean checkInclusion(String s1, String s2) {
+        boolean check = false;
+        int[] s1Array = new int[26];
+        for (int a = 0; a < s1.length(); a++) {
+            char c = s1.charAt(a);
+            int n = c - 'a';
+            s1Array[n] += 1;
+        }
+        // arrays.printArray(s1Array);
+        int i = 0;
+        int lastIndex = s1.length() - 1;
+        while (i + lastIndex < s2.length()) {
+            int[] tempArray = new int[26];
+            for (int j = i; j <= lastIndex + i; j++) {
+                char ch = s2.charAt(j);
+                int number = ch - 'a';
+                tempArray[number] += 1;
+            }
+            int k = 0;
+                check = true;
+                while (k < 26) {
+                    if (s1Array[k] != tempArray[k]) {
+                        check = false;
+                    }
+                    k++;
+                }
+                if(check)
+                {
+                    return check;
+                }
+            i++;
+        }
+        return check;
+    }
+
 }
