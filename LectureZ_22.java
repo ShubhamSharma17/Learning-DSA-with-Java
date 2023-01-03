@@ -32,7 +32,10 @@ public class LectureZ_22 {
 
         // System.out.println(checkInclusion("ab", "eidboaoo"));
 
-        System.out.println(removeDuplicates("abbca"));
+        // System.out.println(removeDuplicates("abbca"));
+
+        char c = (char)(10 + '0');
+        System.out.println(c);
 
     }
 
@@ -202,6 +205,34 @@ public class LectureZ_22 {
 
         }
         return s;
+    }
+
+    // 443. String Compression
+    public static int compress(char[] chars) {
+        int i = 0;
+        int j = 0;
+        int count = 0;
+        int k = 0;
+        while(j < chars.length)
+        {
+            count = 0;
+            while(j < chars.length && chars[i] == chars[j])
+            {
+                count++;
+                j++;
+            }
+            if(count == 1)
+            {
+                chars[k++] = chars[i];
+            }
+            else{
+                chars[k++] = chars[i];
+                char c = (char)(count + '0');
+                chars[k++] = c;
+            }
+            i = j;
+        }
+        return k;
     }
 
 }
