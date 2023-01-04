@@ -225,11 +225,39 @@ public class LectureZ_22 {
             {
                 chars[k++] = chars[i];
             }
-            else{
+            else if(count > 1 && count < 10){
                 chars[k++] = chars[i];
                 char c = (char)(count + '0');
                 chars[k++] = c;
             }
+            else{
+                chars[k++] = chars[i];
+               String s = Integer.toString(count);
+               int a = 0;
+               while(a < s.length())
+               {
+                chars[k++] = s.charAt(a++);
+               }
+            }
+            // else{
+            //     chars[k++] = chars[i];
+            //     int n = 0;
+            //     int temp = count;
+            //     int actualNumber = 0;
+            //     while(temp != 0)
+            //     {
+            //         n = n + (temp % 10);
+            //         n = n * 10;
+            //         temp = temp / 10;
+
+            //     }
+            //     while(n != 0){
+            //         actualNumber = n % 10;
+            //         char c = (char)(actualNumber + '0');
+            //         chars[k++] = c;
+            //         n = n/10;
+            //     }
+            // }
             i = j;
         }
         return k;
