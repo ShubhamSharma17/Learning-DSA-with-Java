@@ -109,6 +109,6 @@ public class Lecture_23 {
                 maxSum = sum;
                 rowNumber = (i+1);
             }
-        }        System.out.println("the maximum sum of row "+ rowNumber + " is " + maxSum);
+        }        System.out.println("The maximum sum of row "+ rowNumber + " is " + maxSum);
     }
 }
